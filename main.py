@@ -193,12 +193,9 @@ def evalPostFix(queue:list) -> Union[float, int]:
 def evalEquation(equation:str)-> Union[float, int]:
     return evalPostFix(infixToPostFix(tokeniseEquation(equation)))
 
-eq = "-1"
-eq1 = "(-1)"
-eq2 = "(-1+20*3-1)-1"
-# eq = "25"
+eq = "(-1+20*3-1)-1"
 
-# print(tokeniseEquation(eq))
-# print(tokeniseEquation(eq1))
-print(tokeniseEquation(eq2))
-print(evalEquation(eq2))
+print(f"Equation {eq}\n" +"-"*32 )
+print(f"Tokenised {tokeniseEquation(eq)}\n" +"-"*32 )
+print(f"infixToPostFix {infixToPostFix(tokeniseEquation(eq))}\n" +"-"*32 )
+print(f"{eq} = {evalEquation(eq)}")
