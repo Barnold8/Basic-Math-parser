@@ -105,15 +105,7 @@ def evalPostFix(queue:list) -> Union[float, int]:
                 case "-":
                     stack.append(lvalue - rvalue)
 
-    print(stack)
-
     return stack[-1]
 
 def evalEquation(equation:str)-> Union[float, int]:
     return evalPostFix(infixToPostFix(tokeniseEquation(equation)))
-
-equation = "(5*4+3*2)-1"
-
-print(tokeniseEquation(equation))
-
-print(evalEquation(equation))
